@@ -60,4 +60,6 @@ Beta 1 Created: 4-19-25 | Changelog: Hello World!
 
 Beta 2 Created: 4-22-25 | Changelog: Sort of fixed the site for old machines, needs to be fixed more so images are desired resolution in the file itself, FrogFind button does not work anymore (needs to be fixed)
 
+Beta 3 Created: 5-02-25 | Changelog: Fixed images for old machines, FrogFind now works on newer machines, still needs to be fixed for older machines
+
 More to come :)
