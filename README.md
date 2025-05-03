@@ -62,4 +62,6 @@ Beta 2 Created: 4-22-25 | Changelog: Sort of fixed the site for old machines, ne
 
 Beta 3 Created: 5-02-25 | Changelog: Fixed images for old machines, FrogFind now works on newer machines, still needs to be fixed for older machines, added 404 page :)
 
+Beta 4 Created: 5-03-25 | Changelog: Refactored file structure, removed pxp assets from repo, renamed LQassets folder to compressed-assets for more readability. Improved code comments!
+
 More to come :)
