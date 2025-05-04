@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <!-- Page title -->
+  <head>
+    <title>ChronArchive</title>
+  </head>
+  <body style="margin: 0; background: url('assets/placeholderbackgroundimage.png') center/cover no-repeat fixed;">
+    <!-- Modern Top NavBar -->
+    <style>
+      body {
+        font-family: Futura, sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 12px 16px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        box-sizing: border-box;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .navbar-logo img {
+        height: 32px;
+        padding-right: 12px;
+      }
+      .navbar-right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+        z-index: 1001;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 2000;
+        min-width: 160px;
+        box-sizing: border-box;
+        border-radius: 8px;
+      }
+      .dropdown-content a {
+        color: white;
+        padding: 12px 24px;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+
+    <div class="navbar">
+      <div class="navbar-logo" style="font-weight: bold; font-size: 20px; color: white;">
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+          Home
+        </a>
+      </div>
+      <div class="navbar-right">
+        <a class="nav-link" href="the-archive">The Archive</a>
+        <div class="dropdown">
+          <a href="#" class="nav-link" id="services-toggle">Services &#9662;</a>
+          <div class="dropdown-content">
+            <a href="network-tests">Network Tests</a>
+            <a href="benchmarks">Benchmarks</a>
+            <a href="bbs">chronBBS</a>
+            <a href="account">Account</a>
+          </div>
+        </div>
+        <a class="nav-link" href="http://retro.novoterra.xyz">About</a>
+        <a class="nav-link" href="login.html">Log In</a>
+      </div>
+    </div>
+
+    <!-- Add padding to body content to avoid overlap -->
+    <div style="clear: both;">
+      <!-- Hero Title Section -->
+      <div style="min-height: 100vh; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 64px;">
+        <div style="font-size: 6vw; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.15); margin-bottom: 32px;">
+          CHRONARCHIVE
+        </div>
+        <div style="font-size: 2vw; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.15); margin-bottom: 32px;">
+          YOUR TIME CAPSULE
+        </div>
+        <form action="https://www.google.com/search" method="GET" style="display: flex; flex-direction: column; align-items: center; gap: 16px; width: 60vw;">
+          <div style="width: 100%; text-align: center;">
+            <input type="text" name="q" style="height: 64px; width: 100%; font-size: 20px; font-weight: bold; border-radius: 12px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); color: white; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); outline: none;">
+          </div>
+          <div style="display: flex; gap: 16px; justify-content: center; width: 100%;">
+            <button type="submit" style="height: 48px; width: 240px; font-size: 18px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">
+              Search with Google
+            </button>
+            <button type="submit" formaction="http://frogfind.com/" style="height: 48px; width: 240px; font-size: 18px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">
+              Search with FrogFind
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modern Chronodulator Section -->
+      <div style="height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="font-size: 36px; font-weight: bold; color: white; margin-bottom: 24px; text-shadow: 0 2px 6px rgba(0,0,0,0.4);">
+          Chronodulator
+        </div>
+        <div style="display: flex; gap: 24px; align-items: center;">
+          <div style="height: 64px; padding: 0 24px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+            Selector:
+          </div>
+          <a href="90.html" style="text-decoration: none;">
+            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">‘90</div>
+          </a>
+          <a href="index.html" style="text-decoration: none;">
+            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">‘95</div>
+          </a>
+          <a href="05.html" style="text-decoration: none;">
+            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">‘05</div>
+          </a>
+          <a href="10.html" style="text-decoration: none;">
+            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">‘10</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+</body>
+<script>
+  const toggle = document.getElementById('services-toggle');
+  const menu = document.querySelector('.dropdown-content');
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+      menu.style.display = 'none';
+    }
+  });
+</script>
+</html>
+<style>
+input::placeholder {
+  color: white;
+  font-weight: bold;
+}
+</style>
