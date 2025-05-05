@@ -64,4 +64,6 @@ Beta 3 Created: 5-02-25 | Changelog: Fixed images for old machines, FrogFind now
 
 Beta 4 Created: 5-03-25 | Changelog: Refactored file structure, removed pxp assets from repo, renamed LQassets folder to compressed-assets for more readability. Improved code comments!
 
+Beta 5: Created 05-04-25 | Changelog: Added 90s and 10s page to chronodulator, added favicon, added assets.
+
 More to come :)
