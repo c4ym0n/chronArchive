@@ -4,8 +4,43 @@
   <head>
     <title>ChronArchive</title>
     <link rel="icon" type="image/png" href="/assets/CA-favicon-192x192.png" sizes="192x192" />
+    <style>
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, #b3e5fc, #c5cae9, #d1c4e9, #b2dfdb, #c8e6c9);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
+        z-index: -1;
+        /* filter: blur(60px); */
+        /* opacity: 0.8; */
+      }
+      @media (prefers-color-scheme: dark) {
+        body::before {
+          background: linear-gradient(-45deg, #2b5876, #4e4376, #1f1c2c, #2c3e50, #0f2027);
+          background-size: 400% 400%;
+          animation: gradientShift 15s ease infinite;
+        }
+      }
+
+      @keyframes gradientShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
   </head>
-  <body style="margin: 0; background: url('assets/placeholderBackgroundImage.png') center/cover no-repeat fixed;">
+  <body style="margin: 0;">
     <!-- Modern Top NavBar -->
     <style>
       body {

@@ -66,4 +66,7 @@ Beta 4 Created: 5-03-25 | Changelog: Refactored file structure, removed pxp asse
 
 Beta 5: Created 05-04-25 | Changelog: Added 90s and 10s page to chronodulator, added favicon, added assets.
 
+Beta 6: Created 05-05-25 | Changelog: Made the 10s page look better and have dark mode support!
+
 More to come :)
+ 
