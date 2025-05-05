@@ -21,7 +21,7 @@
       }
       @media (prefers-color-scheme: dark) {
         body::before {
-          background: linear-gradient(-45deg, #2b5876, #4e4376, #1f1c2c, #2c3e50, #0f2027);
+          background: linear-gradient(-45deg, #4c6ca0, #3f4a72, #2c2c54, #394867, #22304e);
           background-size: 400% 400%;
           animation: gradientShift 15s ease infinite;
         }
@@ -31,8 +31,14 @@
         0% {
           background-position: 0% 50%;
         }
+        25% {
+          background-position: 50% 100%;
+        }
         50% {
           background-position: 100% 50%;
+        }
+        75% {
+          background-position: 50% 0%;
         }
         100% {
           background-position: 0% 50%;
@@ -53,7 +59,7 @@
         justify-content: space-between;
         align-items: center;
         background: rgba(255, 255, 255, 0.1);
-        padding: 12px 16px;
+        padding: 6px 12px;
         position: fixed;
         top: 0;
         left: 0;
@@ -68,11 +74,32 @@
         height: 32px;
         padding-right: 12px;
       }
+      .navbar-logo a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        padding: 8px 12px;
+        display: inline-block;
+        font-size: 16px;
+      }
       .navbar-right {
         display: flex;
         align-items: center;
-        gap: 30px;
+        gap: 36px;
         flex-wrap: wrap;
+      }
+      /* Hide hamburger icon on desktop */
+      .hamburger-icon {
+        display: none;
+      }
+
+      /* Hamburger icon styling for mobile */
+      body.mobile .hamburger-icon {
+        display: block;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        margin-left: auto;
       }
       .dropdown {
         position: relative;
@@ -106,44 +133,128 @@
         color: white;
         text-decoration: none;
         font-weight: bold;
+        padding: 8px 12px;
+        display: inline-block;
+        font-size: 14px;
+      }
+
+      body.mobile .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.75);
+        position: absolute;
+        top: 64px;
+        right: 16px;
+        padding: 16px;
+        border-radius: 12px;
+        z-index: 1001;
+      }
+      body.mobile .mobile-menu.show {
+        display: flex;
+      }
+      body.mobile .navbar-logo {
+        display: block;
+      }
+
+      body.mobile .navbar {
+        justify-content: space-between;
+      }
+
+
+      body.mobile form {
+        margin-top: 4vh;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      body.mobile input[type="text"] {
+        height: 48px !important;
+        width: 85vw !important;
+        font-size: 16px !important;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .hero-section {
+        min-height: 100vh;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 64px 16px 0 16px;
+        box-sizing: border-box;
+      }
+      body.mobile .hero-section {
+        padding-top: 72px;
+      }
+      body.mobile .hero-section > div:first-child {
+        font-size: 10vw !important;
+      }
+
+      body.mobile .hero-section > div:nth-child(2) {
+        font-size: 4.5vw !important;
+      }
+
+      body.mobile .chronodulator-wrapper {
+        width: 85vw;
+        margin: 0 auto;
+        padding-bottom: 64px;
+      }
+      body.mobile .chronodulator-wrapper > div:nth-child(2) {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        width: 100%;
+      }
+      body.mobile .chronodulator-wrapper a div {
+        width: 100%;
+        max-width: 85vw;
+        margin: 0 auto;
       }
     </style>
 
     <div class="navbar">
       <div class="navbar-logo" style="font-weight: bold; font-size: 20px; color: white;">
-        <a href="index.html" style="text-decoration: none; color: inherit;">
-          Home
+        <a href="index.html">
+          <img src="assets/CA-favicon-192x192.png" alt="ChronArchive Logo" style="height: 32px;" />
         </a>
       </div>
       <div class="navbar-right">
-        <a class="nav-link" href="the-archive">The Archive</a>
-        <div class="dropdown">
-          <a href="#" class="nav-link" id="services-toggle">Services &#9662;</a>
-          <div class="dropdown-content">
-            <a href="network-tests">Network Tests</a>
-            <a href="benchmarks">Benchmarks</a>
-            <a href="bbs">chronBBS</a>
-            <a href="account">Account</a>
+        <div class="mobile-menu">
+          <a class="nav-link" href="the-archive">The Archive</a>
+          <div class="dropdown">
+            <a href="#" class="nav-link" id="services-toggle">Services &#9662;</a>
+            <div class="dropdown-content">
+              <a href="network-tests">Network Tests</a>
+              <a href="benchmarks">Benchmarks</a>
+              <a href="bbs">chronBBS</a>
+              <a href="account">Account</a>
+            </div>
           </div>
+          <a class="nav-link" href="http://retro.novoterra.xyz">About</a>
+          <a class="nav-link" href="login.html">Log In</a>
         </div>
-        <a class="nav-link" href="http://retro.novoterra.xyz">About</a>
-        <a class="nav-link" href="login.html">Log In</a>
       </div>
+      <div class="hamburger-icon">☰</div>
     </div>
 
     <!-- Add padding to body content to avoid overlap -->
     <div style="clear: both;">
       <!-- Hero Title Section -->
-      <div style="min-height: 100vh; background: transparent; display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 64px;">
+      <div class="hero-section">
         <div style="font-size: 6vw; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.15); margin-bottom: 32px;">
           CHRONARCHIVE
         </div>
         <div style="font-size: 2vw; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.15); margin-bottom: 32px;">
           YOUR TIME CAPSULE
         </div>
-        <form action="https://www.google.com/search" method="GET" style="display: flex; flex-direction: column; align-items: center; gap: 16px; width: 60vw;">
-          <div style="width: 100%; text-align: center;">
-            <input type="text" name="q" style="height: 64px; width: 100%; font-size: 20px; font-weight: bold; border-radius: 12px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); color: white; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); outline: none;">
+        <form action="https://www.google.com/search" method="GET" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; width: 100%;">
+          <div style="display: flex; justify-content: center; width: 100%;">
+            <input type="text" name="q" style="height: 64px; width: 70vw; font-size: 20px; font-weight: bold; border-radius: 12px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); color: white; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); outline: none; margin: 0 auto;">
           </div>
           <div style="display: flex; gap: 16px; justify-content: center; width: 100%;">
             <button type="submit" style="height: 48px; width: 240px; font-size: 18px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">
@@ -157,7 +268,7 @@
       </div>
 
       <!-- Modern Chronodulator Section -->
-      <div style="height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div class="chronodulator-wrapper" style="height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div style="font-size: 36px; font-weight: bold; color: white; margin-bottom: 24px; text-shadow: 0 2px 6px rgba(0,0,0,0.4);">
           Chronodulator
         </div>
@@ -166,16 +277,16 @@
             Selector:
           </div>
           <a href="90.html" style="text-decoration: none;">
-            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">‘90</div>
+            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">'90</div>
           </a>
           <a href="index.html" style="text-decoration: none;">
-            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">‘95</div>
+            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">'95</div>
           </a>
           <a href="05.html" style="text-decoration: none;">
-            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">‘05</div>
+            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">'05</div>
           </a>
           <a href="10.html" style="text-decoration: none;">
-            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">‘10</div>
+            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">'10</div>
           </a>
         </div>
       </div>
@@ -195,6 +306,15 @@
       menu.style.display = 'none';
     }
   });
+
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    document.body.classList.add('mobile');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    hamburgerIcon?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('show');
+    });
+  }
 </script>
 </html>
 <style>
@@ -203,3 +323,8 @@ input::placeholder {
   font-weight: bold;
 }
 </style>
+    <style>
+      body.mobile button {
+        font-size: 14px !important;
+      }
+    </style>
