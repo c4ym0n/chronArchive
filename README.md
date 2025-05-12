@@ -68,5 +68,7 @@ Beta 5: Created 05-04-25 | Changelog: Added 90s and 10s page to chronodulator, a
 
 Beta 6: Created 05-05-25 | Changelog: Made the 10s page look better and have dark mode support!
 
+Beta 7: Created 05-12-25 | Changelog: archive started! Its basic and rigid for now but will be improved later!
+
 More to come :)
  
