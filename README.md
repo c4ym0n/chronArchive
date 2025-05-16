@@ -51,9 +51,10 @@ Currently Implimented Public Services:
 (** indicates β implimentation, incomplete but functional)
 ([RC] indicates release candidate, complete and fully functional for final validation)
 
-• Main Landing Page * 4-19-25
-• 2005 Landing Page * 4-22-25
+• Main Landing Pages * 5-4-25
 • File Repository * 4-19-25
+• Network Tests * 5-16-25
+• Benchmarks * 5-16-25
 
 -----------------------------------------
 Beta 1 Created: 4-19-25 | Changelog: Hello World!
