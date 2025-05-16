@@ -32,7 +32,7 @@
     "subtitle": "Portable EXE",
     "image": "api/db/previewsLQ/MinecraftImageLQ.jpg",
     "highImage": "api/db/previews/MinecraftImage.jpg",
-    "link": "https://win.novoterra.xyz",
+    "link": "api/db/files/minecraft.exe",
     "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
   },
   {
