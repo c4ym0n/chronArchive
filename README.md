@@ -70,5 +70,7 @@ Beta 6: Created 05-05-25 | Changelog: Made the 10s page look better and have dar
 
 Beta 7: Created 05-12-25 | Changelog: archive started! Its basic and rigid for now but will be improved later!
 
+Beta 8: Created 05-16-25 | Changelog: Way way more progress on the archive, added network tests and benchmarks pages, filters, file search, added a basic DB json and structure!
+
 More to come :)
  

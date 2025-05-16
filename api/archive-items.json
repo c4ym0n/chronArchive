@@ -1,0 +1,74 @@
+[
+  {
+    "type": "website",
+    "security": "no-ssl",
+    "os": "all",
+    "tags": "ssh, mac, terminal, legacy, osx, encryption, command-line, remote access, vintage, tools, ssheven",
+    "title": "SSHeven",
+    "subtitle": "SSH For Old Macs",
+    "image": "api/db/previewsLQ/SSHevenLQ.jpg",
+    "highImage": "api/db/previews/SSHeven.jpg",
+    "link": "http://www.cy384.com/media/bin/ssheven/",
+    "buttonImage": "compressed-assets/VisitBtn.jpg"
+  },
+  {
+    "type": "website",
+    "security": "no-ssl",
+    "os": "all",
+    "tags": "benchmark, javascript, test, browser, webkit, performance, sunspider, speed, scripting, sunspider",
+    "title": "Sunspider",
+    "subtitle": "Benchmarking Utility",
+    "image": "api/db/previewsLQ/SunspiderBenchmarkLQ.jpg",
+    "highImage": "api/db/previews/SunspiderBenchmark.jpg",
+    "link": "http://sunspider.novoterra.xyz",
+    "buttonImage": "compressed-assets/VisitBtn.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "win",
+    "tags": "game, minecraft, exe, windows, portable, java, sandbox, offline, mojang, classic, videogame, minecraft.exe",
+    "title": "Minecraft.exe",
+    "subtitle": "Portable EXE",
+    "image": "api/db/previewsLQ/MinecraftImageLQ.jpg",
+    "highImage": "api/db/previews/MinecraftImage.jpg",
+    "link": "https://win.novoterra.xyz",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "website",
+    "security": "no-ssl",
+    "os": "all",
+    "tags": "mac, vintage, archive, software, abandonware, macintosh, classic, old, downloads, utilities, mac garden",
+    "title": "Mac Garden",
+    "subtitle": "The Macintosh Garden",
+    "image": "api/db/previewsLQ/MacGardenLQ.jpg",
+    "highImage": "api/db/previews/MacGarden.jpg",
+    "link": "http://www.macintoshgarden.org/",
+    "buttonImage": "compressed-assets/VisitBtn.jpg"
+  },
+  {
+    "type": "website",
+    "security": "ssl",
+    "os": "mac",
+    "tags": "macos, installer, os x, apple, upgrade, version, operating system, support, download, os x",
+    "title": "OS X (SSL)",
+    "subtitle": "Download macOS Installers",
+    "image": "api/db/previewsLQ/macOSXLQ.jpg",
+    "highImage": "api/db/previews/macOSX.jpg",
+    "link": "https://support.apple.com/en-us/102662",
+    "buttonImage": "compressed-assets/VisitBtn.jpg"
+  },
+    {
+    "type": "website",
+    "security": "all",
+    "os": "all",
+    "tags": "example, tags, joe",
+    "title": "Template",
+    "subtitle": "Template",
+    "image": "api/db/previewsLQ/placeholder-file-iconLQ.jpg",
+    "highImage": "api/db/previews/placeholder-file-icon.png",
+    "link": "http://www.google.com",
+    "buttonImage": "compressed-assets/VisitBtn.jpg"
+    }
+]

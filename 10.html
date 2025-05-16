@@ -163,7 +163,7 @@
 
 
       body.mobile form {
-        margin-top: 4vh;
+        margin-top: 0;
         align-items: center;
         justify-content: center;
         width: 100%;
@@ -172,9 +172,11 @@
       }
 
       body.mobile input[type="text"] {
-        height: 48px !important;
-        width: 85vw !important;
-        font-size: 16px !important;
+        height: 6vh !important;
+        width: 86vw !important;
+        font-size: 24px !important;
+        padding-left: 12px;
+        padding-right: 12px;
         display: block;
         margin: 0 auto;
       }
@@ -186,21 +188,22 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 64px 16px 0 16px;
+        padding: 10px 16px 0vh 16px;
         box-sizing: border-box;
       }
       body.mobile .hero-section {
-        padding-top: 72px;
+        padding-top: 0px;
       }
       body.mobile .hero-section > div:first-child {
-        font-size: 10vw !important;
+        font-size: 9vw !important;
       }
 
       body.mobile .hero-section > div:nth-child(2) {
-        font-size: 4.5vw !important;
+        font-size: 4vw !important;
       }
 
       body.mobile .chronodulator-wrapper {
+        padding-top: 100px;
         width: 85vw;
         margin: 0 auto;
         padding-bottom: 64px;
@@ -216,6 +219,27 @@
         max-width: 85vw;
         margin: 0 auto;
       }
+
+      /* Mobile dropdown customization for Services menu */
+      body.mobile .dropdown-content {
+        position: static;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        padding: 0;
+        margin-top: 8px;
+        width: 100%;
+      }
+
+      body.mobile .dropdown-content a {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      body.mobile .dropdown-content a:last-child {
+        border-bottom: none;
+      }
     </style>
 
     <div class="navbar">
@@ -228,8 +252,8 @@
           <div class="dropdown">
             <a href="#" class="nav-link" id="services-toggle">Services &#9662;</a>
             <div class="dropdown-content">
-              <a href="network-tests">Network Tests</a>
-              <a href="benchmarks">Benchmarks</a>
+              <a href="network-tests.html">Network Tests</a>
+              <a href="benchmarks.html">Benchmarks</a>
               <a href="bbs">chronBBS</a>
               <a href="account">Account</a>
             </div>
@@ -238,7 +262,7 @@
           <a class="nav-link" href="login.html">Log In</a>
         </div>
       </div>
-      <div class="hamburger-icon">=</div>
+      <div class="hamburger-icon"style="font-weight: bold; font-size: 16px; color: white;">Menu</div>
     </div>
 
     <!-- Add padding to body content to avoid overlap -->
@@ -267,25 +291,22 @@
       </div>
 
       <!-- Modern Chronodulator Section -->
-      <div class="chronodulator-wrapper" style="height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <div style="font-size: 36px; font-weight: bold; color: white; margin-bottom: 24px; text-shadow: 0 2px 6px rgba(0,0,0,0.4);">
+      <div class="chronodulator-wrapper" style="padding: 30px 24px; max-width: 900px; margin: 64px auto; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 16px; backdrop-filter: blur(10px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); text-align: center;">
+        <div style="font-size: 32px; font-weight: bold; color: white; margin-bottom: 24px; text-shadow: 0 2px 6px rgba(0,0,0,0.4);">
           Chronodulator
         </div>
-        <div style="display: flex; gap: 24px; align-items: center;">
-          <div style="height: 64px; padding: 0 24px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-            Selector:
-          </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 10px; justify-items: center;">
           <a href="90.html" style="text-decoration: none;">
-            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">'90</div>
+            <div style="width: 96px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; padding: 0 0px; max-width: 300px; margin: 0 auto;">'90</div>
           </a>
           <a href="index.html" style="text-decoration: none;">
-            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">'95</div>
+            <div style="width: 96px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; padding: 0 0px; max-width: 300px; margin: 0 auto;">'95</div>
           </a>
           <a href="05.html" style="text-decoration: none;">
-            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">'05</div>
+            <div style="width: 96px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; padding: 0 0px; max-width: 300px; margin: 0 auto;">'05</div>
           </a>
           <a href="10.html" style="text-decoration: none;">
-            <div style="height: 64px; width: 96px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer;">'10</div>
+            <div style="width: 96px; height: 64px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; color: white; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 12px; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; padding: 0 0px; max-width: 300px; margin: 0 auto;">'10</div>
           </a>
         </div>
       </div>

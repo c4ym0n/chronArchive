@@ -27,16 +27,102 @@
             <img src="compressed-assets/CALogo.jpg" alt="ChronArchive Logo" style="width: 280px;">
             </a>
          </div>
-         <div style="text-align: center; padding-top: 30px; font-family: Futura, sans-serif; font-size: 1.5em;">
+         <div style="text-align: center; padding-top: 30px; font-family: Futura, sans-serif; font-size: 1.5em; padding-bottom: 30px;">
            Welcome to The Archive!
          </div>
+         <div style="text-align: center; margin-bottom: 10px;">
+<div style="display: inline-block; background-color: #FFF; padding: 12px 10px;"></div>
+  <div style="display: inline-block; background-color: #c4e4cd; padding: 12px 20px; border-radius: 40px; margin: 0 auto; text-align: center;">
+    <input id="tagSearchInput" type="text" placeholder="Search by keyword..."
+      style="font-family: Futura, sans-serif; font-size: 1em; padding: 6px 12px; border: 1px solid #888; border-radius: 6px; background-color: #f4f4f4; color: #333; width: 240px;">
+    <button id="searchButton" onclick="applyFilters()" style="margin-left: 10px; font-family: Futura, sans-serif; font-size: 1em; padding: 6px 12px; border: 1px solid #888; border-radius: 6px; background-color: #e0e0e0; cursor: pointer;">
+      Search
+    </button>
+    <button onclick="toggleFilters()" style="margin-left: 10px; font-family: Futura, sans-serif; font-size: 1em; padding: 6px 12px; border: 1px solid #888; border-radius: 6px; background-color: #e0e0e0; cursor: pointer;">
+      More
+    </button>
+  </div>
+<div style="display: inline-block; background-color: #FFF; padding: 12px 10px;"></div>
+</div>
+         <div id="filterContainer" style="display: none; text-align: center;">
+           <div style="display: inline-block; background-color: #c4e4cd; padding: 12px 20px; border-radius: 40px; margin: 0 auto 30px auto; text-align: center;">
+  <label style="font-family: Futura, sans-serif; margin-right: 10px;">Filter by:</label>
+  <select id="typeFilter" onchange="applyFilters()" style="margin-right: 10px;">
+    <option value="all">Any Type</option>
+    <option value="website">Website</option>
+    <option value="file">File</option>
+  </select>
+  <select id="securityFilter" onchange="applyFilters()" style="margin-right: 10px;">
+    <option value="all">Any Security</option>
+    <option value="no-ssl">No SSL</option>
+    <option value="ssl">SSL</option>
+  </select>
+    <select id="operatingSystemFilter" onchange="applyFilters()" style="margin-right: 10px;">
+    <option value="all">Any OS</option>
+    <option value="mac">MacOS</option>
+    <option value="win">Windows</option>
+    <option value="lin">Linux</option>
+  </select>
+       <label style="font-family: Futura, sans-serif; margin-left: 10px;"> | </label>
+        <label style="margin-left: 10px; font-family: Futura, sans-serif; font-size: 12pt;">
+      <input type="checkbox" id="instantSearchToggle" onchange="updateInstantSearch()" />
+      Live Search
+    </label>
+         <label style="font-family: Futura, sans-serif; margin-left: 10px;"> | </label>
+    <label style="font-family: Futura, sans-serif; margin-left: 10px;">
+      <input type="checkbox" id="qualityToggle" onchange="toggleImageQuality()" />
+      HiDPI Previews
+    </label>
+     <label style="font-family: Futura, sans-serif; margin-left: 10px;"> | </label>
+          <div id="dbStatusIndicator" style="display: inline-block; background-color: #c4e4cd; padding: 0px 10px; border-radius: 40px; font-family: Futura, sans-serif; font-size: 12pt; margin-left: 5px;">
+      DB Status: <span id="dbStatus">Fallback</span>
+    </div>
+</div>
+         </div>
+<script>
+  function applyFilters() {
+    const type = document.getElementById("typeFilter").value;
+    const security = document.getElementById("securityFilter").value;
+    const os = document.getElementById("operatingSystemFilter").value;
+    const items = document.querySelectorAll('.grid-item');
+    let anyVisible = false;
+    items.forEach(item => {
+      const matchesType = (type === "all" || item.dataset.type === type);
+      const matchesSecurity = (security === "all" || item.dataset.security === security);
+      const matchesOS = (os === "all" || item.dataset.os === "all" || item.dataset.os === os);
+      const searchInput = document.getElementById("tagSearchInput").value.trim().toLowerCase();
+      const tags = item.dataset.tags || "";
+      const matchesSearch = searchInput === "" || tags.toLowerCase().includes(searchInput);
+      const show = matchesType && matchesSecurity && matchesOS && matchesSearch;
+      item.style.display = show ? "block" : "none";
+      if (show) anyVisible = true;
+    });
+    document.getElementById("noResultsMessage").style.display = anyVisible ? "none" : "block";
+  }
+  function toggleFilters() {
+    const container = document.getElementById("filterContainer");
+    container.style.display = container.style.display === "none" ? "block" : "none";
+  }
+  function updateInstantSearch() {
+    const input = document.getElementById("tagSearchInput");
+    const toggle = document.getElementById("instantSearchToggle").checked;
+    input.removeEventListener('input', applyFilters);
+    if (toggle) {
+      input.addEventListener('input', applyFilters);
+    }
+    // Show/hide the search button based on instant search toggle
+    document.getElementById("searchButton").style.display = toggle ? "none" : "inline-block";
+  }
+</script>
 <style>
   .grid-container {
     display: flex;
     flex-wrap: wrap;
+    border-radius: 20px;
     justify-content: center;
     max-width: 900px;
     margin: auto;
+    background-color: #dff2e4;
   }
   .grid-item {
     width: 28%;
@@ -45,23 +131,18 @@
     box-sizing: border-box;
     text-align: center;
     font-family: sans-serif;
-    border: 1px solid #999;
-    border-radius: 6px;
-    background-color: #f9f9f9;
+    border: 0px solid #999;
+    border-radius:32px;
+    background-color: #c4e4cd;
   }
   .grid-item img {
     max-width: 100%;
+    border-radius: 32px;
     height: auto;
     margin-bottom: 10px;
   }
-  .download-btn {
-    display: inline-block;
-    margin-top: 5px;
-    padding: 5px 10px;
-    background-color: #ccc;
-    text-decoration: none;
-    color: black;
-    border: 1px solid #999;
+  .download-btn img{
+    border-radius: 0px;
   }
   .grid-title {
     font-family: Futura, sans-serif;
@@ -75,50 +156,149 @@
     font-size: 0.9em;
     margin: 6px 0 10px 0;
   }
+  select {
+    font-family: Futura, sans-serif;
+    font-size: 1em;
+    padding: 6px 12px;
+    border: 1px solid #888;
+    border-radius: 6px;
+    background-color: #f4f4f4;
+    color: #333;
+  }
 </style>
 
 <body>
-  <div class="grid-container">
-    <div class="grid-item">
-      <img src="compressed-assets/SSHevenLQ.jpg" alt="SSHeven">
+  <div class="grid-container"></div>
+
+  <template id="staticItems">
+    <div class="grid-item" data-type="website" data-security="no-ssl" data-os="all" data-tags="ssh, mac, terminal, legacy, osx, encryption, command-line, remote access, vintage, tools, ssheven">
+      <img class="preview-low" src="compressed-assets/SSHevenLQ.jpg" alt="SSHeven">
+      <img class="preview-high" src="compressed-assets/SSHevenLQ.jpg" alt="SSHeven" width="256px" height="256px" style="display: none;">
       <div class="grid-title">SSHeven</div>
       <div class="grid-subtitle">SSH For Old Macs</div>
+      <div class="download-btn">
       <a href="http://www.cy384.com/media/bin/ssheven/">
         <img src="compressed-assets/VisitBtn.jpg" alt="Download Button">
       </a>
+      </div>
     </div>
-    <div class="grid-item">
-      <img src="compressed-assets/SunspiderBenchmarkLQ.jpg" alt="Sunspider">
+    <div class="grid-item" data-type="website" data-security="no-ssl" data-os="all" data-tags="benchmark, javascript, test, browser, webkit, performance, sunspider, speed, scripting, sunspider">
+      <img class="preview-low" src="compressed-assets/SunspiderBenchmarkLQ.jpg" alt="Sunspider">
+      <img class="preview-high" src="compressed-assets/SunspiderBenchmarkLQ.jpg" alt="Sunspider" width="256px" height="256px" style="display: none;">
       <div class="grid-title">Sunspider</div>
       <div class="grid-subtitle">Benchmarking Utility</div>
+      <div class="download-btn">
       <a href="http://sunspider.novoterra.xyz">
         <img src="compressed-assets/VisitBtn.jpg" alt="Download Button">
       </a>
+      </div>
     </div>
-    <div class="grid-item">
-      <img src="compressed-assets/MinecraftImageLQ.jpg" alt="Minecraft">
+    <div class="grid-item" data-type="file" data-security="no-ssl" data-os="win" data-tags="game, minecraft, exe, windows, portable, java, sandbox, offline, mojang, classic, videogame, minecraft.exe">
+      <img class="preview-low" src="compressed-assets/MinecraftImageLQ.jpg" alt="Minecraft">
+      <img class="preview-high" src="compressed-assets/MinecraftImageLQ.jpg" alt="Minecraft" width="256px" height="256px" style="display: none;">
       <div class="grid-title">Minecraft.exe</div>
       <div class="grid-subtitle">Portable EXE</div>
+      <div class="download-btn">
       <a href="https://win.novoterra.xyz">
         <img src="compressed-assets/DownloadBtnLQ.jpg" alt="Download Button">
       </a>
+      </div>
     </div>
-    <div class="grid-item">
-      <img src="compressed-assets/MacGardenLQ.jpg" alt="Mac Garden">
+    <div class="grid-item" data-type="website" data-security="no-ssl" data-os="all" data-tags="mac, vintage, archive, software, abandonware, macintosh, classic, old, downloads, utilities, mac garden">
+      <img class="preview-low" src="compressed-assets/MacGardenLQ.jpg" alt="Mac Garden">
+      <img class="preview-high" src="compressed-assets/MacGardenLQ.jpg" alt="Mac Garden" width="256px" height="256px" style="display: none;">
       <div class="grid-title">Mac Garden</div>
       <div class="grid-subtitle">The Macintosh Garden</div>
+      <div class="download-btn">
       <a href="http://www.macintoshgarden.org/">
         <img src="compressed-assets/VisitBtn.jpg" alt="Download Button">
       </a>
+      </div>
     </div>
-    <div class="grid-item">
-      <img src="compressed-assets/macOSXLQ.jpg" alt="MacOSX">
+    <div class="grid-item" data-type="website" data-security="ssl" data-os="mac" data-tags="macos, installer, os x, apple, upgrade, version, operating system, support, download, os x">
+      <img class="preview-low" src="compressed-assets/macOSXLQ.jpg" alt="MacOSX">
+      <img class="preview-high" src="compressed-assets/macOSXLQ.jpg" alt="MacOSX" width="256px" height="256px" style="display: none;">
       <div class="grid-title">OS X (SSL)</div>
       <div class="grid-subtitle">Download macOS Installers</div>
+      <div class="download-btn">
       <a href="https://support.apple.com/en-us/102662">
         <img src="compressed-assets/VisitBtn.jpg" alt="Download Button">
       </a>
+      </div>
     </div>
+  </template>
     
+  <div id="noResultsMessage" style="display: none; width: 100%; text-align: center; margin-top: 40px;">
+    <div style="display: inline-block; background-color: #c4e4cd; border-radius: 32px; padding: 20px; max-width: 400px;">
+      <div class="grid-title">No Matching Items</div>
+      <div class="grid-subtitle">Try Adjusting Your Filters</div>
+    </div>
   </div>
-</body></html>
+
+<script>
+  let showHighQuality = false;
+
+  function toggleImageQuality() {
+    showHighQuality = document.getElementById("qualityToggle").checked;
+
+    // Toggle dynamically loaded items
+    document.querySelector('.grid-container').innerHTML = '';
+    loadItems();
+
+    // Toggle static fallback items
+    document.querySelectorAll('.preview-low').forEach(el => {
+      el.style.display = showHighQuality ? 'none' : '';
+    });
+    document.querySelectorAll('.preview-high').forEach(el => {
+      el.style.display = showHighQuality ? '' : 'none';
+    });
+  }
+
+async function loadItems() {
+  const container = document.querySelector('.grid-container');
+  try {
+    const response = await fetch('/api/archive-items.json');
+    const items = await response.json();
+    if (!Array.isArray(items) || items.length === 0) throw new Error("Empty or invalid data");
+
+    items.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'grid-item';
+      div.dataset.type = item.type;
+      div.dataset.security = item.security;
+      div.dataset.os = item.os;
+      div.dataset.tags = item.tags.toLowerCase();
+
+      // Choose button image based on type
+      const buttonImage = item.type === "website"
+        ? "compressed-assets/VisitBtn.jpg"
+        : "compressed-assets/DownloadBtnLQ.jpg";
+
+      const imageSrc = showHighQuality && item.highImage ? item.highImage : item.image;
+      const imageSize = showHighQuality && item.highImage ? 256 : 128;
+      div.innerHTML = `
+        <img src="${imageSrc}" alt="${item.title}" style="width: ${imageSize}px; height: ${imageSize}px; object-fit: cover; display: block; margin: 0 auto;">
+        <div class="grid-title">${item.title}</div>
+        <div class="grid-subtitle">${item.subtitle}</div>
+        <div class="download-btn">
+          <a href="${item.link}">
+            <img src="${buttonImage}" alt="Download Button">
+          </a>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+    // Set DB status to Server
+    document.getElementById("dbStatus").textContent = "👍";
+  } catch (error) {
+    console.warn("Falling back to static content due to:", error);
+    const fallback = document.getElementById('staticItems');
+    container.innerHTML = fallback.innerHTML;
+    // Set DB status to Local
+    document.getElementById("dbStatus").textContent = "👎";
+  }
+}
+document.addEventListener('DOMContentLoaded', loadItems);
+</script>
+</body>
+</html>

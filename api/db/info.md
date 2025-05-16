@@ -1,0 +1,1 @@
+# This is the placeholder database folder to make the server work locally for debugging
