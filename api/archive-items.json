@@ -107,4 +107,212 @@
     "link": "http://www.google.com",
     "buttonImage": "compressed-assets/VisitBtn.jpg"
     }
+<<<<<<< HEAD
+  ,
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "win",
+    "tags": "media, music, apple, windows, software, installer",
+    "title": "iTunes",
+    "subtitle": "Apple Music Software for Windows",
+    "image": "api/db/previewsLQ/iTunesLQ.jpg",
+    "highImage": "api/db/previews/iTunes.png",
+    "link": "api/db/files/iTunes64Setup.exe",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "disk, writer, windows, usb, utility",
+    "title": "WinDiskWriter",
+    "subtitle": "Disk Writing Utility",
+    "image": "api/db/previewsLQ/WinDiskLQ.jpg",
+    "highImage": "api/db/previews/WinDisk.png",
+    "link": "api/db/files/WinDiskWriter.zip",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "all",
+    "tags": "ssl, certificate, encryption, web, security",
+    "title": "LetsEncrypt",
+    "subtitle": "SSL Certificate Utility",
+    "image": "api/db/previewsLQ/LetsEncryptLQ.jpg",
+    "highImage": "api/db/previews/LetsEncrypt.png",
+    "link": "api/db/files/LetsEncrypt.zip",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "win",
+    "tags": "apple, sync, cloud, windows, storage",
+    "title": "iCloud",
+    "subtitle": "Apple Cloud for Windows",
+    "image": "api/db/previewsLQ/iCloudLQ.jpg",
+    "highImage": "api/db/previews/iCloud.png",
+    "link": "api/db/files/iCloudSetup.exe",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "browser, web, internet, open source, mozilla",
+    "title": "Firefox",
+    "subtitle": "Web Browser",
+    "image": "api/db/previewsLQ/FirefoxLQ.jpg",
+    "highImage": "api/db/previews/Firefox.png",
+    "link": "api/db/files/Firefox115.zip",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "win",
+    "tags": "usb, boot, iso, utility, portable, windows",
+    "title": "Rufus",
+    "subtitle": "Bootable USB Creator",
+    "image": "api/db/previewsLQ/RufusLQ.jpg",
+    "highImage": "api/db/previews/Rufus.png",
+    "link": "api/db/files/rufusPortable.exe",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "hackintosh, bootloader, macos, efi, opencore",
+    "title": "OpenCore",
+    "subtitle": "Bootloader for macOS",
+    "image": "api/db/previewsLQ/OpenCoreLQ.jpg",
+    "highImage": "api/db/previews/OpenCore.png",
+    "link": "api/db/files/OpenCore240.pkg",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "game, sandbox, java, offline, mojang, classic",
+    "title": "Minecraft.app",
+    "subtitle": "Mac Portable",
+    "image": "api/db/previewsLQ/MinecraftLQ.jpg",
+    "highImage": "api/db/previews/Minecraft.png",
+    "link": "api/db/files/Minecraft.zip",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "browser, chrome, web, open source, internet",
+    "title": "Chromium",
+    "subtitle": "Open Source Browser",
+    "image": "api/db/previewsLQ/ChromiumLQ.jpg",
+    "highImage": "api/db/previews/Chromium.png",
+    "link": "api/db/files/Chromium.zip",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "usb, writer, iso, dmg, balena, utility",
+    "title": "Etcher",
+    "subtitle": "Mac USB Burner",
+    "image": "api/db/previewsLQ/EtcherLQ.jpg",
+    "highImage": "api/db/previews/Etcher.png",
+    "link": "api/db/files/Etcher2.1.2.dmg",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "macos, apple, installer, version, operating, system",
+    "title": "El Capitan",
+    "subtitle": "macOS 10.11 Installer",
+    "image": "api/db/previewsLQ/ElCapitanLQ.jpg",
+    "highImage": "api/db/previews/ElCapitan.png",
+    "link": "api/db/files/ElCapitan.pkg",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "macos, apple, installer, version, operating, system",
+    "title": "Yosemite",
+    "subtitle": "macOS 10.10 Installer",
+    "image": "api/db/previewsLQ/YosemiteLQ.jpg",
+    "highImage": "api/db/previews/Yosemite.png",
+    "link": "api/db/files/Yosemite.pkg",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "macos, apple, installer, version, operating, system",
+    "title": "Sierra",
+    "subtitle": "macOS 10.12 Installer",
+    "image": "api/db/previewsLQ/SierraLQ.jpg",
+    "highImage": "api/db/previews/Sierra.png",
+    "link": "api/db/files/Sierra.pkg",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "macos, apple, installer, version, operating, system",
+    "title": "Mountain Lion",
+    "subtitle": "macOS 10.8 Installer",
+    "image": "api/db/previewsLQ/MtnLionLQ.jpg",
+    "highImage": "api/db/previews/MtnLion.png",
+    "link": "api/db/files/MountainLion.pkg",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "mac",
+    "tags": "macos, apple, installer, version, operating, system",
+    "title": "Lion",
+    "subtitle": "macOS 10.7 Installer",
+    "image": "api/db/previewsLQ/LionLQ.jpg",
+    "highImage": "api/db/previews/Lion.png",
+    "link": "api/db/files/Lion.pkg",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "win",
+    "tags": "windows, iso, installer, microsoft, os, 10, operating, system",
+    "title": "Windows 10",
+    "subtitle": "ISO Installer (22H2)",
+    "image": "api/db/previewsLQ/W10LQ.jpg",
+    "highImage": "api/db/previews/W10.png",
+    "link": "api/db/files/W1022H2.iso",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  },
+  {
+    "type": "file",
+    "security": "no-ssl",
+    "os": "win",
+    "tags": "windows, iso, installer, microsoft, os, lightweight, 11, operating, system",
+    "title": "Tiny 11",
+    "subtitle": "B2 No Sysreq ISO",
+    "image": "api/db/previewsLQ/W11LQ.jpg",
+    "highImage": "api/db/previews/W11.png",
+    "link": "api/db/files/tiny11.iso",
+    "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
+  }
+=======
+>>>>>>> parent of 805503c (B9)
 ]
