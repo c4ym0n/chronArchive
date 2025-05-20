@@ -87,11 +87,23 @@
     "type": "website",
     "security": "all",
     "os": "all",
-    "tags": "example, tags, joe",
-    "title": "Template",
-    "subtitle": "Template",
-    "image": "api/db/previewsLQ/placeholder-file-iconLQ.jpg",
-    "highImage": "api/db/previews/placeholder-file-icon.png",
+    "tags": "speedtest, benchmark, internet, speedtest.net, ookla",
+    "title": "Speedtest.net",
+    "subtitle": "OOKLA Speedtest",
+    "image": "api/db/previewsLQ/speedtestLQ.jpg",
+    "highImage": "api/db/previews/speedtest.png",
+    "link": "http://www.speedtest.net",
+    "buttonImage": "compressed-assets/VisitBtn.jpg"
+    },
+    {
+    "type": "website",
+    "security": "all",
+    "os": "all",
+    "tags": "speedtest, benchmark, internet, fast, fast.com",
+    "title": "Fast.com",
+    "subtitle": "Netflix Speedtest",
+    "image": "api/db/previewsLQ/fastLQ.jpg",
+    "highImage": "api/db/previews/fast.png",
     "link": "http://www.google.com",
     "buttonImage": "compressed-assets/VisitBtn.jpg"
     }

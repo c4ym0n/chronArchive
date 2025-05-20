@@ -55,6 +55,7 @@ Currently Implimented Public Services:
 • File Repository * 5-16-25
 • Network Tests * 5-16-25
 • Benchmarks * 5-20-25
+• Social Links * 5-20-25
 
 -----------------------------------------
 Beta 1 Created: 4-19-25 | Changelog: Hello World!
@@ -73,7 +74,7 @@ Beta 7: Created 05-12-25 | Changelog: archive started! Its basic and rigid for n
 
 Beta 8: Created 05-16-25 | Changelog: Way way more progress on the archive, added network tests and benchmarks pages, filters, file search, added a basic DB json and structure!
 
-Beta 9: Created 05-20-25 | Changelog: Sunspider is now local, added v8, also local! Added now button to benchmarks page!
+Beta 9: Created 05-20-25 | Changelog: Sunspider is now local, added v8, also local! Added now button to benchmarks page! Added a link to the discord, login and account pages although functionality is heavily limited for now. Links should no longer be dead on the site, all links should now lead to reasonable pages!
 
 More to come :)
  
