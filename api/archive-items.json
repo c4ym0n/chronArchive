@@ -19,9 +19,9 @@
     "title": "Sunspider",
     "subtitle": "Benchmarking Utility",
     "image": "api/db/previewsLQ/SunspiderBenchmarkLQ.jpg",
-    "highImage": "api/db/previews/SunspiderBenchmark.jpg",
-    "link": "http://sunspider.novoterra.xyz",
-    "buttonImage": "compressed-assets/VisitBtn.jpg"
+    "highImage": "api/db/previews/SunspiderBenchmark.png",
+    "link": "api/db/files/sunspider/index.html",
+    "buttonImage": "compressed-assets/LaunchBtnLQ.jpg"
   },
   {
     "type": "file",
@@ -58,6 +58,30 @@
     "highImage": "api/db/previews/macOSX.jpg",
     "link": "https://support.apple.com/en-us/102662",
     "buttonImage": "compressed-assets/VisitBtn.jpg"
+  },
+    {
+    "type": "website",
+    "security": "no-ssl",
+    "os": "all",
+    "tags": "benchmark, javascript, test, browser, webkit, performance, sunspider, speed, scripting, v8, netchain, js, javascript",
+    "title": "v8 Benchmark",
+    "subtitle": "Javascript v8 Benchmark",
+    "image": "api/db/previewsLQ/v8LQ.jpg",
+    "highImage": "api/db/previews/v8.png",
+    "link": "api/db/files/v8/index.html",
+    "buttonImage": "compressed-assets/LaunchBtnLQ.jpg"
+  },
+      {
+    "type": "website",
+    "security": "no-ssl",
+    "os": "all",
+    "tags": "browser, tool, utility, search, search-engine, engine, frog, frogfind, find, web",
+    "title": "Frog Find",
+    "subtitle": "Basic Search Engine",
+    "image": "api/db/previewsLQ/FrogFindLQ.jpg",
+    "highImage": "api/db/previews/FrogFind.png",
+    "link": "http://www.frogfind.com",
+    "buttonImage": "compressed-assets/VisitBtnLQ.jpg"
   },
     {
     "type": "website",
