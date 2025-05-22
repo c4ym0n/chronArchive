@@ -107,7 +107,6 @@
     "link": "http://www.google.com",
     "buttonImage": "compressed-assets/VisitBtn.jpg"
     }
-<<<<<<< HEAD
   ,
   {
     "type": "file",
@@ -313,6 +312,4 @@
     "link": "api/db/files/tiny11.iso",
     "buttonImage": "compressed-assets/DownloadBtnLQ.jpg"
   }
-=======
->>>>>>> parent of 805503c (B9)
 ]

@@ -5,6 +5,7 @@
   <head>
     <title>The Archive</title>
     <meta property="og:image" content="assets/SocialPreview.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="/assets/CA-favicon-192x192.png" sizes="192x192" />
   </head>
     <body style="margin: 0;">
@@ -146,19 +147,19 @@
     border-radius: 0px;
   }
   .grid-title {
-    font-family: Futura, sans-serif;
+    font-family: sans-serif;
     font-weight: bold;
     font-size: 1.2em;
     margin-top: 10px;
   }
   .grid-subtitle {
-    font-family: Futura, sans-serif;
+    font-family: sans-serif;
     font-weight: normal;
     font-size: 0.9em;
     margin: 6px 0 10px 0;
   }
   select {
-    font-family: Futura, sans-serif;
+    font-family: sans-serif;
     font-size: 1em;
     padding: 6px 12px;
     border: 1px solid #888;
@@ -255,51 +256,55 @@
     });
   }
 
-async function loadItems() {
+function loadItems() {
   const container = document.querySelector('.grid-container');
-  try {
-    const response = await fetch('/api/archive-items.json');
-    const items = await response.json();
-    if (!Array.isArray(items) || items.length === 0) throw new Error("Empty or invalid data");
-
-    items.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'grid-item';
-      div.dataset.type = item.type;
-      div.dataset.security = item.security;
-      div.dataset.os = item.os;
-      div.dataset.tags = item.tags.toLowerCase();
-
-      // Choose button image based on type
-      const buttonImage = item.type === "website"
-        ? "compressed-assets/VisitBtn.jpg"
-        : "compressed-assets/DownloadBtnLQ.jpg";
-
-      const imageSrc = showHighQuality && item.highImage ? item.highImage : item.image;
-      const imageSize = showHighQuality && item.highImage ? 256 : 128;
-      div.innerHTML = `
-        <img src="${imageSrc}" alt="${item.title}" style="width: ${imageSize}px; height: ${imageSize}px; object-fit: cover; display: block; margin: 0 auto;">
-        <div class="grid-title">${item.title}</div>
-        <div class="grid-subtitle">${item.subtitle}</div>
-        <div class="download-btn">
-          <a href="${item.link}">
-            <img src="${buttonImage}" alt="Download Button">
-          </a>
-        </div>
-      `;
-      container.appendChild(div);
-    });
-    // Set DB status to Server
-    document.getElementById("dbStatus").textContent = "👍";
-  } catch (error) {
-    console.warn("Falling back to static content due to:", error);
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", "/api/archive-items.json", true);
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      try {
+        const items = JSON.parse(xhr.responseText);
+        if (!Array.isArray(items) || items.length === 0) throw new Error("Empty or invalid data");
+        container.innerHTML = "";
+        items.forEach(function(item) {
+          const div = document.createElement('div');
+          div.className = 'grid-item';
+          div.dataset.type = item.type;
+          div.dataset.security = item.security;
+          div.dataset.os = item.os;
+          div.dataset.tags = item.tags.toLowerCase();
+          const buttonImage = item.type === "website"
+            ? "compressed-assets/VisitBtn.jpg"
+            : "compressed-assets/DownloadBtnLQ.jpg";
+          const imageSrc = showHighQuality && item.highImage ? item.highImage : item.image;
+          const imageSize = showHighQuality && item.highImage ? 256 : 128;
+          div.innerHTML = '<img src="' + imageSrc + '" alt="' + item.title + '" style="width: ' + imageSize + 'px; height: ' + imageSize + 'px; object-fit: cover; display: block; margin: 0 auto;">' +
+            '<div class="grid-title">' + item.title + '</div>' +
+            '<div class="grid-subtitle">' + item.subtitle + '</div>' +
+            '<div class="download-btn"><a href="' + item.link + '"><img src="' + buttonImage + '" alt="Download Button"></a></div>';
+          container.appendChild(div);
+        });
+        document.getElementById("dbStatus").textContent = "👍";
+      } catch (e) {
+        console.warn("Fallback to static content due to:", e);
+        const fallback = document.getElementById('staticItems');
+        container.innerHTML = fallback.innerHTML;
+        document.getElementById("dbStatus").textContent = "👎";
+      }
+    } else {
+      const fallback = document.getElementById('staticItems');
+      container.innerHTML = fallback.innerHTML;
+      document.getElementById("dbStatus").textContent = "👎";
+    }
+  };
+  xhr.onerror = function () {
     const fallback = document.getElementById('staticItems');
     container.innerHTML = fallback.innerHTML;
-    // Set DB status to Local
     document.getElementById("dbStatus").textContent = "👎";
-  }
+  };
+  xhr.send();
 }
-document.addEventListener('DOMContentLoaded', loadItems);
+window.onload = loadItems;
 </script>
 </body>
 </html>
